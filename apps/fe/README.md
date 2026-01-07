@@ -1,4 +1,4 @@
-# `.env.example` (WAJIB)
+# `.env`
 
 ```env
 VITE_API_URL=XXXX
@@ -17,4 +17,12 @@ atau menggunakan docker compose
 
 ```bash
 docker compose up
+```
+
+# Node Engine 
+```
+    "engines": {
+      "node": ">=24.12.0",
+      "npm": "~11.0.0"
+    }
 ```
