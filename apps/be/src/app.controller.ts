@@ -6,12 +6,15 @@ import {
   Patch,
   Post,
   Query,
+  UseGuards,
   // ValidationPipe,
 } from '@nestjs/common';
 import { AppService } from './app.service';
 import { CreateTodoDto } from './common/dto/todo';
 import { ValidationPipe } from './common/pipe/validation';
+import { XUserIdGuard } from './common/guards/x-user-id';
 
+@UseGuards(XUserIdGuard)
 @Controller()
 export class AppController {
   constructor(private readonly appService: AppService) {}

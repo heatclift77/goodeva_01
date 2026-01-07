@@ -24,7 +24,7 @@ import {
   FormLabel,
 } from "./components/ui/form";
 import { Alert, AlertTitle } from "@/components/ui/alert";
-const API_URL = import.meta.env.VITE_API_URL
+const API_URL = import.meta.env.VITE_API_URL;
 
 function App() {
   // state
@@ -48,6 +48,7 @@ function App() {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        "X-user-id": 1,
       },
       body: JSON.stringify(payload),
     });
@@ -64,6 +65,7 @@ function App() {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
+        "X-user-id": 1,
       },
       body: JSON.stringify({ completed: payload.completed }),
     });
@@ -92,7 +94,7 @@ function App() {
       setIsDialogForm(false);
     },
     onError: () => {
-        alert("Server Error")
+      alert("Server Error");
     },
   });
 
@@ -103,14 +105,16 @@ function App() {
   } = useQuery({
     queryKey: ["todos"],
     queryFn: async () => {
-      const data = await fetch(
-        `${API_URL}/api/todo?search=${search}`
-      );
+      const data = await fetch(`${API_URL}/api/todo?search=${search}`, {
+        headers: {
+          "X-user-id": 1,
+        },
+      });
       return data.json();
     },
     enabled: true,
     initialData: [],
-    retry: 1
+    retry: 1,
   });
 
   return (
