@@ -1,4 +1,4 @@
-# `.env.example` (WAJIB)
+# `.env`
 
 ```env
 DATABASE_HOST=XXXX
