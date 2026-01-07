@@ -4,7 +4,7 @@ masuk ke apps fe dan be, siapkan env seperti pada contoh disana
 
 ---
 
-# Cara Jalanin (TINGGAL COPY COMMAND)
+# Cara Jalanin
 
 ```bash
 pnpm install
