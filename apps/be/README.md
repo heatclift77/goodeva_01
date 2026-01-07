@@ -10,9 +10,17 @@ DATABASE_PASSWORD=XXXX
 
 ---
 
-# Cara Jalanin (TINGGAL COPY COMMAND)
+# Cara Jalanin
 
 ```bash
 pnpm install
 pnpm start:dev
+```
+
+# Node Engine 
+```
+    "engines": {
+      "node": ">=24.12.0",
+      "npm": "~11.0.0"
+    }
 ```
