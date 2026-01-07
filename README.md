@@ -12,3 +12,9 @@ pnpm dev
 ```
 
 note: belum bisa setup env dari root.
+
+keputusan teknis: 
+- mencoba menggunakan monorepo.
+- penggunaan shadcn di component mempercepat pengerjaan di sisi FE
+
+
