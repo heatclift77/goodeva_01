@@ -24,6 +24,7 @@ import {
   FormLabel,
 } from "./components/ui/form";
 import { Alert, AlertTitle } from "@/components/ui/alert";
+const API_URL = import.meta.env.VITE_API_URL
 
 function App() {
   // state
@@ -43,7 +44,7 @@ function App() {
   };
 
   async function createTodo(payload) {
-    const res = await fetch("http://localhost:3000/api/todo", {
+    const res = await fetch(`${API_URL}/api/todo`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -59,7 +60,7 @@ function App() {
   }
 
   async function updateTodo(payload) {
-    const res = await fetch(`http://localhost:3000/api/todo/${payload.id}`, {
+    const res = await fetch(`${API_URL}/api/todo/${payload.id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -96,7 +97,6 @@ function App() {
   });
 
   const {
-    isLoading,
     data: todos,
     isError,
     refetch,
@@ -104,7 +104,7 @@ function App() {
     queryKey: ["todos"],
     queryFn: async () => {
       const data = await fetch(
-        `http://localhost:3000/api/todo?search=${search}`
+        `${API_URL}/api/todo?search=${search}`
       );
       return data.json();
     },
