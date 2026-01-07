@@ -11,4 +11,4 @@ pnpm install
 pnpm dev
 ```
 
-note: aplikasi juga bisa di jalankan per app.
+note: belum bisa setup env dari root.
